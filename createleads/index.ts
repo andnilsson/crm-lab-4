@@ -1,6 +1,7 @@
 import { Person, Lead } from './model';
 import getTokenAsync from 'dyn365-access-token';
 import unirest = require('unirest');
+import { auth } from './auth';
 const request = require("request").defaults({ encoding: null });
 
 async function loadPersons(): Promise<Person[]> {
@@ -85,22 +86,13 @@ async function sendtocrm(lead: Lead, token: string): Promise<void> {
 }
 
 
-async function load() {
-    var req = {
-        username: "",
-        password: "",
-        client_id: "",
-        client_secret: "",
-        resource: "https://<<tenant>>.crm4.dynamics.com",
-        commonAuthority: "https://login.windows.net/<<tenant>>.onmicrosoft.com/oauth2/token",
-    }
-
+async function load() {    
     var persons = await loadPersons();
     var createLeadReqs = persons.map(p => createLead(p));
 
     var leads = await Promise.all(createLeadReqs);
 
-    var token = await getTokenAsync(req);
+    var token = await getTokenAsync(auth);
     var createreqs = leads.map(l => sendtocrm(l, token));
 
     await Promise.all(createreqs);
