@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceRoot}\\bin\\index.js",
+            "outFiles": [],
+            "env": {
+                "BUILD_BUILDNUMBER": "1.0.0.5",
+                "INPUT_BUILDFOLDER": "C:\\Repos\\crm-popper\\stq_",
+                "INPUT_USERNAME": "andreas@datingautomation.onmicrosoft.com",
+                "INPUT_PASSWORD": "Letsgorangers!",
+                "INPUT_PUBLISHER": "stq_",
+                "INPUT_APIVERSION": "8.2",
+                "INPUT_CLIENTID": "eece4113-a0c3-434e-b060-4795984c6276",
+                "INPUT_CLIENTSECRET": "lUoxdvkO0PIC9HRubSh7XslteI1bHAajK9I4TU2rmto=",
+                "INPUT_RESOURCE": "https://datingautomation.crm4.dynamics.com",
+                "INPUT_COMMONAUTHORITY": "https://login.windows.net/datingautomation.onmicrosoft.com/oauth2/token"          
+            }
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Process",
+            "address": "localhost",
+            "port": 5858,
+            "outFiles": []
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "crm-lab4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crm-common-js": "^2.6.11",
+    "dyn365-access-token": "^1.0.0",
+    "request": "^2.81.0",    
+    "unirest": "^0.5.1"
+  }
+}
